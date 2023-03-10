@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51a01060-7d39-43b6-a055-d50e77147c2d" name="Changes" comment="complete 1.0">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/conway_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/conway/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conway/Conway.java" afterDir="false" />
+    <list default="true" id="51a01060-7d39-43b6-a055-d50e77147c2d" name="Changes" comment="changed output to clear and show">
+      <change beforePath="$PROJECT_DIR$/src/main/java/conway/Conway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conway/Conway.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +91,7 @@
       <updated>1678386943184</updated>
       <workItem from="1678386944401" duration="440000" />
       <workItem from="1678443678969" duration="5000" />
-      <workItem from="1678444654033" duration="10848000" />
+      <workItem from="1678444654033" duration="10935000" />
     </task>
     <task id="LOCAL-00001" summary="complete 1.0">
       <created>1678485318884</created>
@@ -103,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678485318884</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed output to clear and show">
+      <created>1678487564532</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678487564532</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="complete 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete 1.0" />
+    <MESSAGE value="changed output to clear and show" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed output to clear and show" />
   </component>
 </project>

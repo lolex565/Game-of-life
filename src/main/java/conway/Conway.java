@@ -12,15 +12,14 @@ public class Conway {
 
         int[][] alive = {{0,1},{1,2},{2,0},{2,1},{2,2}};
         Board board = new Board(10,10, alive);
-        clearScreen();
         for (int i = 0; i < 50; i++) {
+            clearScreen();
             board.printBoard('0', ' ');
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            clearScreen();
             board.updateBoard();
         }
 
