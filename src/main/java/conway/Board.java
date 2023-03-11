@@ -6,10 +6,15 @@ public class Board {
 
     public int column;
     public int row;
+
+    public String aliveSymbol;
+    public String deadSymbol;
     public Cell[][] board;
-    public Board(int row, int column, List<int[]> alive) {
+    public Board(int row, int column, List<int[]> alive, String aliveSymbol, String deadSymbol) {
         this.column = column;
         this.row = row;
+        this.aliveSymbol = aliveSymbol;
+        this.deadSymbol = deadSymbol;
         this.board = new Cell[row][column];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
@@ -127,19 +132,21 @@ public class Board {
                 }
             }
         }
-        if (aliveNextTurn.isEmpty()){
-            System.out.println("All cells died");
-            System.exit(0);
-        }
         for (int[] pair:deadNextTurn) {
             this.board[pair[0]][pair[1]].setState(false);
         }
         for (int[] pair:aliveNextTurn) {
             this.board[pair[0]][pair[1]].setState(true);
         }
+        Tools.clearScreen();
+        printBoard(this.aliveSymbol, this.deadSymbol);
+        if (aliveNextTurn.isEmpty()){
+            System.out.println("All cells died");
+            System.exit(0);
+        }
     }
 
-    public void printBoard(char aliveSymbol, char deadSymbol){
+    public void printBoard(String aliveSymbol, String deadSymbol){
         System.out.print("+---");
         for (int i = 0; i < this.row; i++) {
             System.out.printf("%4d", i);
@@ -150,9 +157,9 @@ public class Board {
             System.out.printf("|%3d", i);
             for (int j = 0; j < this.column; j++) {
                 if (this.board[i][j].getState()){
-                    System.out.printf("%3c ", aliveSymbol);
+                    System.out.printf("%3s ", aliveSymbol);
                 } else {
-                    System.out.printf("%3c ", deadSymbol);
+                    System.out.printf("%3s ", deadSymbol);
                 }
             }
             System.out.print('|');

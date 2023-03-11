@@ -9,7 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51a01060-7d39-43b6-a055-d50e77147c2d" name="Changes" comment="changed position of clear screen">
+    <list default="true" id="51a01060-7d39-43b6-a055-d50e77147c2d" name="Changes" comment="added user control&#10;more spaghett(tm)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/conway/Tools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/conway/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conway/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/conway/Conway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/conway/Conway.java" afterDir="false" />
@@ -93,7 +94,7 @@
       <updated>1678386943184</updated>
       <workItem from="1678386944401" duration="440000" />
       <workItem from="1678443678969" duration="5000" />
-      <workItem from="1678444654033" duration="16119000" />
+      <workItem from="1678444654033" duration="17375000" />
     </task>
     <task id="LOCAL-00001" summary="complete 1.0">
       <created>1678485318884</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678487632588</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added user control&#10;more spaghett(tm)">
+      <created>1678493222504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678493222504</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +145,7 @@
     <MESSAGE value="complete 1.0" />
     <MESSAGE value="changed output to clear and show" />
     <MESSAGE value="changed position of clear screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed position of clear screen" />
+    <MESSAGE value="added user control&#10;more spaghett(tm)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added user control&#10;more spaghett(tm)" />
   </component>
 </project>

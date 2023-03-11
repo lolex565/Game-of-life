@@ -4,10 +4,6 @@ import java.util.*;
 
 public class Conway {
 
-    public static void clearScreen() {
-        System.out.print("\033\143");
-        System.out.flush();
-    }
     public static void main(String[] args) {
 
         //int[][] alive = {{0,1},{1,2},{2,0},{2,1},{2,2}};
@@ -27,6 +23,14 @@ public class Conway {
             frameTime = scan.nextInt();
         }
 
+        scan.nextLine();
+
+        System.out.println("How to show alive cells:");
+        String aliveSymbol = scan.nextLine();
+
+        System.out.println("How to show dead cells:");
+        String deadSymbol = scan.nextLine();
+
         int rows = 0;
         int columns = 0;
 
@@ -37,11 +41,11 @@ public class Conway {
             columns = scan.nextInt();
         }
 
-        Board board = new Board(rows,columns, alive);
+        Board board = new Board(rows,columns, alive, aliveSymbol, deadSymbol);
 
         while (true){
-            clearScreen();
-            board.printBoard('0', ' ');
+            Tools.clearScreen();
+            board.printBoard(aliveSymbol, deadSymbol);
             System.out.println("change another cell(y/n)");
             String ans = scan.nextLine();
             if (Objects.equals(ans, "y")) {
@@ -55,9 +59,9 @@ public class Conway {
             }
         }
 
+        Tools.clearScreen();
+        board.printBoard(aliveSymbol, deadSymbol);
         for (int i = 0; i < turns; i++) {
-            clearScreen();
-            board.printBoard('0', ' ');
             try {
                 Thread.sleep(frameTime);
             } catch (InterruptedException e) {
