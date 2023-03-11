@@ -7,7 +7,7 @@ public class Board {
     public int column;
     public int row;
     public Cell[][] board;
-    public Board(int row, int column, int[][] alive) {
+    public Board(int row, int column, List<int[]> alive) {
         this.column = column;
         this.row = row;
         this.board = new Cell[row][column];
@@ -16,8 +16,8 @@ public class Board {
                 this.board[i][j] = new Cell();
             }
         }
-        for (int i = 0; i < alive.length; i++) {
-            this.board[alive[i][0]][alive[i][1]].setState(true);
+        for (int[] pair:alive) {
+            this.board[pair[0]][pair[1]].setState(true);
         }
 
     }
@@ -104,6 +104,16 @@ public class Board {
         return neighbourAmount;
     }
 
+    public void flipCellState(int row, int column){
+        if (row >= 0 && row < this.row && column >=0 && column < this.column){
+            if (this.board[row][column].getState()){
+                this.board[row][column].setState(false);
+            } else {
+                this.board[row][column].setState(true);
+            }
+        }
+    }
+
     public void updateBoard(){
         List<int[]> deadNextTurn = new ArrayList<int[]>();
         List<int[]> aliveNextTurn = new ArrayList<int[]>();
@@ -117,6 +127,10 @@ public class Board {
                 }
             }
         }
+        if (aliveNextTurn.isEmpty()){
+            System.out.println("All cells died");
+            System.exit(0);
+        }
         for (int[] pair:deadNextTurn) {
             this.board[pair[0]][pair[1]].setState(false);
         }
@@ -126,26 +140,26 @@ public class Board {
     }
 
     public void printBoard(char aliveSymbol, char deadSymbol){
-        System.out.print('+');
-        for (int i = 0; i < this.row*2; i++) {
-            System.out.print('-');
+        System.out.print("+---");
+        for (int i = 0; i < this.row; i++) {
+            System.out.printf("%4d", i);
         }
-        System.out.print('+');
+        System.out.print("+");
         System.out.print('\n');
         for (int i = 0; i < this.row; i++) {
-            System.out.print('|');
+            System.out.printf("|%3d", i);
             for (int j = 0; j < this.column; j++) {
                 if (this.board[i][j].getState()){
-                    System.out.print(aliveSymbol + " ");
+                    System.out.printf("%3c ", aliveSymbol);
                 } else {
-                    System.out.print(deadSymbol + " ");
+                    System.out.printf("%3c ", deadSymbol);
                 }
             }
             System.out.print('|');
             System.out.print("\n");
         }
         System.out.print('+');
-        for (int i = 0; i < this.row*2; i++) {
+        for (int i = 0; i < (this.row+1)*4-1; i++) {
             System.out.print('-');
         }
         System.out.print('+');
